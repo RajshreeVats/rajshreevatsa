@@ -1,18 +1,30 @@
-<?
-$name = $_POST{'name'};
-$email = $_POST{'email'};
-$message = $_POST['message'];
+<?php
 
-$email_message = "
+   $name = $_POST{'name'};
+   $email_visitors = $_POST{'email'};
+   $message = $_POST['message'];
 
-Name: ".$name."
-Email: ".$email."
-Message: ".$message."
 
-";
+   $email_from = 'jharuhi379@gmail.com';
 
-mail ("2006508@kiit.ac.in" , "New Message", $email_message);
-header("location: ../mail-success.html ");
+   $email_subject = "New contact form submission on website";
+
+   $email_body = "User Name: $name.\n".
+                    "User Email: $email_visitors.\n".
+                         "User message: $message.\n";
+                       
+   
+
+    $to = "littlekidandco@gmail.com";
+    $headers = "From: $email_from \r\n";
+
+    $headers = "Reply-To: $email_visitors\r\n";
+
+    mail ("$to" , $email_subject, $email_body,$headers);
+
+    header("location: index.html");
+
+    
 ?>
 
 
