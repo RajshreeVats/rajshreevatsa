@@ -4,25 +4,26 @@
    $email_visitors = $_POST{'email'};
    $message = $_POST['message'];
 
+   $to = "littlekidandco@gmail.com";
 
-   $email_from = 'jharuhi379@gmail.com';
+   $email_subject = "New mail from website";
 
-   $email_subject = "New contact form submission on website";
 
-   $email_body = "User Name: $name.\n".
-                    "User Email: $email_visitors.\n".
-                         "User message: $message.\n";
-                       
-   
+   $email_body = "Name =". $name. "\r\n email = " .$email_visitors. "\r\n message =" .$message ." ;
 
-    $to = "littlekidandco@gmail.com";
-    $headers = "From: $email_from \r\n";
+
+
+    
+    $headers = "From: rajshreevats42@gmail.com" . "\r\n" .
+    "CC: jharuhi379@gmail.com";
+
 
     $headers = "Reply-To: $email_visitors\r\n";
 
     mail ("$to" , $email_subject, $email_body,$headers);
+    
 
-    header("location: index.html");
+    header("location: thankyou.html");
 
     
 ?>
