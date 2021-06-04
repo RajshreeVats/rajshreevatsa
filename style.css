@@ -616,7 +616,7 @@
 #about-me .skill-info{
 	overflow:hidden;
 }
-#about-me .skill-info h4 {
+#about-me .skill-info P {
 	float: left;
 	font-size: 14px;
 	margin-bottom: 12px;
